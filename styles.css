@@ -34,8 +34,6 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -47,8 +45,11 @@ body {
     padding: 1rem 2rem;
     transform: translateY(-100%);
     transition: transform 0.3s ease;
+}
+
+.header-content.hover-reveal {
     background: rgba(255, 255, 255, 0.95);
-    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hover-reveal:hover {
@@ -239,4 +240,73 @@ social-links a:hover {
         gap: 1rem;
         margin-top: 1rem;
     }
+}
+
+/* Topic Page Styles */
+.topic-page {
+    padding-top: 80px;
+}
+
+.topic-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.topic-period {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.text-block {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-block {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.image-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.caption {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Resume Section Styles */
+.resume-content {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: var(--secondary-color);
 }
