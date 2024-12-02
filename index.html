@@ -9,12 +9,12 @@
 </head>
 <body>
     <header class="sticky-header">
-        <div class="header-content">
+        <div class="header-content hover-reveal">
             <h1>Jack's Portfolio</h1>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#work-experience">Work Experience</a></li>
+                    <li><a href="#professional-experience">Professional Experience</a></li>
                     <li><a href="#personal-projects">Personal Projects</a></li>
                     <li><a href="#school-projects">School Projects</a></li>
                     <li><a href="#hobbies">Hobbies</a></li>
@@ -34,21 +34,28 @@
             </div>
         </section>
 
-        <section id="work-experience">
+        <section id="professional-experience">
             <div class="container">
-                <h2>Work Experience</h2>
+                <h2>Professional Experience</h2>
                 <div class="grid-container">
-                    <div class="grid-item">
-                        <div class="card">
-                            <img src="images/job1.jpg" alt="Job 1">
-                            <div class="card-content">
-                                <h3>Software Developer</h3>
-                                <p>Company Name</p>
-                                <span class="date">2020 - Present</span>
+                    <a href="experience/mutron.html" class="grid-item">
+                        <div class="image-card">
+                            <img src="images/mutron.png" alt="Mu-Tron">
+                            <div class="image-label">
+                                <h3>Mu-Tron</h3>
+                                <p>Research & Development</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- Add more job items as needed -->
+                    </a>
+                    <a href="experience/hunter.html" class="grid-item">
+                        <div class="image-card">
+                            <img src="images/hunter.png" alt="Hunter Industries">
+                            <div class="image-label">
+                                <h3>Hunter Industries</h3>
+                                <p>Software Engineering</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -57,19 +64,14 @@
             <div class="container">
                 <h2>Personal Projects</h2>
                 <div class="grid-container">
-                    <div class="grid-item">
-                        <div class="card">
+                    <a href="projects/project1.html" class="grid-item">
+                        <div class="image-card">
                             <img src="images/project1.jpg" alt="Project 1">
-                            <div class="card-content">
+                            <div class="image-label">
                                 <h3>Project Name</h3>
-                                <p>Brief description</p>
-                                <div class="tags">
-                                    <span>React</span>
-                                    <span>Node.js</span>
-                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Add more project items as needed -->
                 </div>
             </div>
@@ -127,11 +129,7 @@
                 const rect = section.getBoundingClientRect();
                 if (rect.top <= 150 && rect.bottom >= 150) {
                     navLinks.forEach(link => {
-                        if (link.getAttribute('href') === '#' + section.id) {
-                            link.classList.add('active');
-                        } else {
-                            link.classList.remove('active');
-                        }
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + section.id);
                     });
                 }
             });
