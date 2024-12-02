@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,27 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Jack's Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="work-experience.html">Work Experience</a></li>
-                <li><a href="personal-projects.html">Personal Projects</a></li>
-                <li><a href="school-projects.html">School Projects</a></li>
-                <li><a href="hobbies.html">Hobbies</a></li>
-            </ul>
-        </nav>
+    <header class="sticky-header">
+        <div class="header-content">
+            <h1>Jack's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work-experience">Work Experience</a></li>
+                    <li><a href="#personal-projects">Personal Projects</a></li>
+                    <li><a href="#school-projects">School Projects</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Welcome to my personal website where I showcase my work experience, projects, and hobbies.</p>
+        <section id="about" class="hero">
+            <div class="container">
+                <h2>About Me</h2>
+                <p class="lead">Welcome to my portfolio! I'm a passionate developer who loves creating and learning.</p>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <section id="work-experience">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div class="card">
+                            <img src="images/job1.jpg" alt="Job 1">
+                            <div class="card-content">
+                                <h3>Software Developer</h3>
+                                <p>Company Name</p>
+                                <span class="date">2020 - Present</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more job items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="personal-projects">
+            <div class="container">
+                <h2>Personal Projects</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div class="card">
+                            <img src="images/project1.jpg" alt="Project 1">
+                            <div class="card-content">
+                                <h3>Project Name</h3>
+                                <p>Brief description</p>
+                                <div class="tags">
+                                    <span>React</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more project items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="school-projects">
+            <div class="container">
+                <h2>School Projects</h2>
+                <div class="grid-container">
+                    <!-- Similar grid items for school projects -->
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <div class="container">
+                <h2>Hobbies</h2>
+                <div class="grid-container">
+                    <!-- Similar grid items for hobbies -->
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2023 Jack</p>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Jack</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active section highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === '#' + section.id) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
