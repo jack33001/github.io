@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #ede4f8;
-    --secondary-color: #C9C6CE;
-    --text-color: #908D95;
+    --primary-color: #C9C6CE;
+    --secondary-color: #908D95;
+    --text-color: #EDE4F8;
     --background-color: #605E62;
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --background-color-dark: #121212;
-    --text-color-dark: #605E62;
-    --primary-color-dark: #BAAACD;
+    --text-color-dark: #BAAACD;
+    --primary-color-dark: #605E62;
     --secondary-color-dark: #a4a1ab;
 }
 
