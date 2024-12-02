@@ -35,7 +35,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: all 0.3s ease;
 }
 
 .header-content {
@@ -43,16 +42,25 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
 }
 
-.header-content.hover-reveal {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Add new hover trigger area */
+.hover-trigger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1001;
 }
 
-.hover-reveal:hover {
+/* Modify hover behavior */
+.hover-trigger:hover + .sticky-header .header-content,
+.sticky-header:hover .header-content {
     transform: translateY(0);
 }
 
